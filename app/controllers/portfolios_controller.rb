@@ -24,6 +24,10 @@ class PortfoliosController < ApplicationController
   def edit
   end
 
+  def show
+
+  end
+
   def update
     if @portfolio_item.update(portfolio_params)
       flash[:notice] = "Success"

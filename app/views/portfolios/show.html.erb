@@ -1,0 +1,7 @@
+<h1>Show Portfolio item</h1>
+
+<p><%= image_tag(@portfolio_item.main_image) %></p>
+<h2><%= @portfolio_item.title %></h2>
+<p><%= @portfolio_item.subtitle %></p>
+<p><%= @portfolio_item.body %></p>
+<%= link_to("Edit", edit_portfolio_path(@portfolio_item)) %>
