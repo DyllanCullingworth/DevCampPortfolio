@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
 
+  before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
+
   def index
     @portfolio_items = Portfolio.all
   end
@@ -14,9 +16,26 @@ class PortfoliosController < ApplicationController
       flash[:notice] = "Success"
       redirect_to portfolios_path
     else
-      flash[:alert]
+      flash[:alert] = "Failure"
       render new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @portfolio_item.update(portfolio_params)
+      flash[:notice] = "Success"
+      redirect_to portfolios_path
+    else
+      flash[:alert] = "Failure"
+      render new
+    end
+  end
+
+  def destroy
+
   end
 
   private
