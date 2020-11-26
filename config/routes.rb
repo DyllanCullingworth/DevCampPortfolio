@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # ================= Pages
   root to: 'pages#home'
   get 'home', to: 'pages#home'
