@@ -8,23 +8,35 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <% if flash %>
-    <div class="flash_message">
-      <% if flash[:notice] %>
-        <div class="alert alert-info">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
-      <% if flash[:alert] %>
-        <div class="alert alert-warning">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-
   <body>
+  <div class="flash">
+    <% if flash %>
+      <div class="flash_message">
+        <% if flash[:notice] %>
+          <div class="alert alert-info">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+        <% if flash[:alert] %>
+          <div class="alert alert-warning">
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+    <div class="devise">
+
+      <% if current_user %>
+        <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
+      <% else %>
+        <%= link_to("Login", new_user_session_path) %>
+        <%= link_to("Register", new_user_registration_path) %>
+      <% end %>
+
+    </div>
+
     <%= yield %>
   </body>
 </html>
