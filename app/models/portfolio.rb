@@ -3,6 +3,8 @@ class Portfolio < ApplicationRecord
   validates_presence_of :title, :body, :main_image, :thumb_image
 
   has_many :technologies
+  accepts_nested_attributes_for :technologies,
+                                reject_if: lambda { |attrs| attrs['name'].blank? }
 
   def self.angular
     where(subtitle: 'Angular')
