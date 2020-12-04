@@ -14,10 +14,7 @@
   <%= login_helper %>
   <%= yield %>
   <%= render partial: "shared/nav" %>
-
-  <% if session[:source] %>
-    <p>Thank you for visiting me from <%= session[:source] %></p>
-  <% end %>
+  <%= source_helper %>
 
 </body>
 </html>
