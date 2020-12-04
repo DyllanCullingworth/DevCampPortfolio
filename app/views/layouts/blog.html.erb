@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @page_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+
+
+<div class="flash">
+  <% if flash %>
+    <div class="flash_message">
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-warning">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="devise">
+
+  <% if current_user.is_a?(User) %>
+    <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
+  <% else %>
+    <%= link_to("Login", new_user_session_path) %>
+    <%= link_to("Register", new_user_registration_path) %>
+  <% end %>
+
+</div>
+
+<%= yield %>
+
+<div class="nav_links">
+  <div><%= link_to "Home", root_path %></div>
+  <div><%= link_to "About", about_path %></div>
+  <div><%= link_to "Contact", contact_path %></div>
+  <div><%= link_to "Blog", blogs_path %></div>
+  <div><%= link_to "Portfolios", portfolios_path %></div>
+</div>
+
+<% if session[:source] %>
+  <p>Thank you for visiting me from <%= session[:source] %></p>
+<% end %>
+
+</body>
+</html>
