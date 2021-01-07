@@ -44,3 +44,5 @@ end
 
 gem 'friendly_id', '~> 5.4.0'
 gem 'devise'
+gem 'bootstrap', '~> 4.5.3'
+gem 'jquery-rails'
