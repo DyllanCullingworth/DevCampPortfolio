@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/DyllanCullingworth/View-Tool-Gem
+  revision: 31bdbe814cd9810e31d204a9952d2632ebb37612
+  specs:
+    dyllan_cullingworth_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -206,6 +212,7 @@ DEPENDENCIES
   bootstrap (~> 4.5.3)
   byebug
   devise
+  dyllan_cullingworth_view_tool!
   friendly_id (~> 5.4.0)
   jbuilder (~> 2.7)
   jquery-rails

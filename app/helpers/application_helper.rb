@@ -17,4 +17,8 @@ module ApplicationHelper
     end
   end
 
+  def copyright_generator
+    @copyright = DyllanCullingworthViewTool::Renderer.copyright 'Dyllan Cullingworth', 'All rights reserved'
+  end
+
 end
