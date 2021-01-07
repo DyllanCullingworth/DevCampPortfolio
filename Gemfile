@@ -47,3 +47,4 @@ gem 'devise'
 gem 'bootstrap', '~> 4.5.3'
 gem 'jquery-rails'
 gem 'dyllan_cullingworth_view_tool', git: "https://github.com/DyllanCullingworth/View-Tool-Gem"
+gem 'petergate', '~> 2.0', '>= 2.0.1'
