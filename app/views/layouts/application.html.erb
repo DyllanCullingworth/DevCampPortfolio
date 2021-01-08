@@ -19,11 +19,10 @@
 
           <%= render partial: "shared/application_nav" %>
           <%= render partial: "shared/flash" %>
-          <%= login_helper %>
+
           <%= yield %>
           <%= source_helper %>
-          <hr>
-          <%= copyright_generator %>
+          <%= render partial: "shared/application_footer" %>
 
         </div>
       </div>
