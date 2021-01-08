@@ -13,13 +13,21 @@
   </head>
   <body>
 
-    <%= render partial: "shared/nav" %>
-    <%= render partial: "shared/flash" %>
-    <%= login_helper %>
-    <%= yield %>
-    <%= source_helper %>
-    <hr>
-    <%= copyright_generator %>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+          <%= render partial: "shared/application_nav" %>
+          <%= render partial: "shared/flash" %>
+          <%= login_helper %>
+          <%= yield %>
+          <%= source_helper %>
+          <hr>
+          <%= copyright_generator %>
+
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
