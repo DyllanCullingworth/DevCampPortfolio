@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title><%= @page_title %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <style>
+      .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+      }
+
+      @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+          }
+      }
+  </style>
+
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900" rel="stylesheet">
+
 </head>
 <body>
 
-  <%= render partial: "shared/flash" %>
-  <%= login_helper %>
+<div class="container">
+  <%= render partial: "blogs/blog_nav" %>
+
+  <%= render partial: "blogs/featured" %>
+
+
+
+
+  <%#= login_helper %>
   <%= yield %>
-  <%= render partial: "shared/nav" %>
+  <%#= render partial: "shared/nav" %>
   <%= source_helper %>
+  <%= render partial: "blogs/footer" %>
+</div>
+
 
 </body>
 </html>
