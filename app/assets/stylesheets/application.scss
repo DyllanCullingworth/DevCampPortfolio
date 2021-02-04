@@ -153,6 +153,19 @@ body {
   }
 }
 
+/*
+ * Custom Styles
+ */
+
+.card-body {
+  color: black;
+  text-align: left;
+}
+
+.auth_links a{
+  color: black;
+}
+
 @media (min-width: 62em) {
   .masthead,
   .mastfoot,
