@@ -11,43 +11,31 @@
   <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <style>
-      .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-      }
-
-      @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-              font-size: 3.5rem;
-          }
-      }
-  </style>
-
-  <!-- Custom styles for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900" rel="stylesheet">
-
 </head>
 <body>
 
-<div class="nav_container">
+
+
+
+
+  <%#= render partial: "blogs/featured" %>
+
+  <div class="nav_container">
     <%= render partial: "shared/application_nav" %>
-</div>
+  </div>
+  <div class="container">
+    <div class="py-4 my-4 border-bottom">
+      <h1>My Blog</h1>
+      <p class="text-muted">A place for me to share my stories</p>
+      <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
+    </div>
+    <%= render partial: "blogs/blog_nav" %>
+    <%= yield %>
 
+    <%= source_helper %>
+  </div>
+    <%= render partial: "blogs/footer" %>
 
-<div class="container">
-  <%= render partial: "blogs/blog_nav" %>
-  <%= render partial: "blogs/featured" %>
-  <%#= login_helper %>
-  <%= yield %>
-  <%#= render partial: "shared/nav" %>
-  <%= source_helper %>
-  <%= render partial: "blogs/footer" %>
-</div>
 
 
 </body>

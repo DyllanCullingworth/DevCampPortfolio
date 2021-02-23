@@ -1,12 +1,13 @@
-
-
-
-
-
 <main role="main">
   <div class="row">
     <div class="col-md-8 blog-main">
-      <%= render partial: "blogs/blog_main" %>
+
+      <%= render @blogs %>
+
+      <nav class="blog-pagination">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+      </nav>
     </div><!-- /.blog-main -->
 
     <aside class="col-md-4 blog-sidebar">
@@ -17,25 +18,3 @@
 
 </main>
 
-
-
-<!--<h1>Blogs</h1>-->
-
-<!--<table>-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th>Blog Title</th>-->
-<!--      <th>Date</th>-->
-<!--      <th>Body</th>-->
-<!--      <th colspan="3"></th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-    <%#= render @blogs %>
-<!--  </tbody>-->
-<!--</table>-->
-
-<!--<br>-->
-
-<%#= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>

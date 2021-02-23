@@ -1,9 +1,14 @@
-<tr>
-  <td><%= blog.title %></td>
-  <td>Published <%= distance_of_time_in_words_to_now(blog.created_at) %> ago</td>
-  <td><%= blog.body %></td>
-  <td><%= link_to(blog.status, toggle_status_blog_path(blog)) if logged_in?(:site_admin) %></td>
-  <td><%= link_to 'Show', blog %></td>
-  <td><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
-  <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
-</tr>
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
+  <p class="blog-post-meta">Published <%= distance_of_time_in_words_to_now(blog.created_at) %> ago by <a href="#">Dyllan Cullingworth</a></p>
+
+  <p><%= blog.body %></p>
+  <%= link_to 'Show', blog, class: "btn btn-primary" %>
+  <% if logged_in?(:site_admin) %>
+    <%= link_to 'Edit', edit_blog_path(blog), class: "btn btn-primary" %>
+    <%= link_to blog.status.capitalize , toggle_status_blog_path(blog), class: "btn btn-warning" %>
+    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% end %>
+
+</div><!-- /.blog-post -->
+
