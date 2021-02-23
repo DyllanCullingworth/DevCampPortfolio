@@ -34,14 +34,14 @@
 </head>
 <body>
 
+<div class="nav_container">
+    <%= render partial: "shared/application_nav" %>
+</div>
+
+
 <div class="container">
   <%= render partial: "blogs/blog_nav" %>
-
   <%= render partial: "blogs/featured" %>
-
-
-
-
   <%#= login_helper %>
   <%= yield %>
   <%#= render partial: "shared/nav" %>
