@@ -14,29 +14,43 @@
 </head>
 <body>
 
-
-
-
-
   <%#= render partial: "blogs/featured" %>
 
   <div class="nav_container">
     <%= render partial: "shared/application_nav" %>
   </div>
+
   <div class="container">
+
     <div class="py-4 my-4 border-bottom">
       <h1>My Blog</h1>
       <p class="text-muted">A place for me to share my stories</p>
       <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
     </div>
-    <%= render partial: "blogs/blog_nav" %>
-    <%= yield %>
 
+    <%= render partial: "blogs/blog_nav" %>
+
+    <main role="main">
+      <div class="row">
+
+        <div class="col-md-9 blog-main">
+
+          <%= yield %>
+
+        </div>
+
+        <aside class="col-md-3 blog-sidebar">
+
+          <%= render partial: "blogs/sidebar" %>
+
+        </aside>
+
+      </div><!-- /.row -->
+    </main>
     <%= source_helper %>
   </div>
-    <%= render partial: "blogs/footer" %>
 
-
+  <%= render partial: "blogs/footer" %>
 
 </body>
 </html>

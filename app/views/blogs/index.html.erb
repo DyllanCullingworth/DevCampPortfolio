@@ -1,20 +1,14 @@
-<main role="main">
-  <div class="row">
-    <div class="col-md-8 blog-main">
 
-      <%= render @blogs %>
 
-      <nav class="blog-pagination">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
-    </div><!-- /.blog-main -->
+  <%= render @blogs %>
 
-    <aside class="col-md-4 blog-sidebar">
-      <%= render partial: "blogs/sidebar" %>
-    </aside><!-- /.blog-sidebar -->
+  <nav class="blog-pagination">
+    <a class="btn btn-outline-primary" href="#">Older</a>
+    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+  </nav>
 
-  </div><!-- /.row -->
 
-</main>
+
+
+
 
